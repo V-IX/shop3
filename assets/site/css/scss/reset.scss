@@ -1,0 +1,386 @@
+@import 'config.scss';
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, 
+form, input, textarea, button, select, option,
+ul, li, ol, img, p, hr, 
+table, tr, td, thead, tbody, tfoot 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body {
+	@include mysize(100%, 100%);
+}
+
+body {
+	@include myfont($f-size, null, null, $color, $f-family);
+}
+
+input, textarea, button, select {
+	@include myfont($f-size, null, null, $color, $f-family);
+}
+
+button {cursor: pointer;}
+
+a {
+	color: $color-link;
+	text-decoration: underline;
+	&:hover {text-decoration: none;}
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+::-webkit-input-placeholder {
+	@include myfont($f-size, 300, null, $color-gray, $f-family);
+}
+
+:-moz-placeholder {
+	@include myfont($f-size, 300, null, $color-gray, $f-family);
+}
+
+:focus {
+	outline: 0;
+}
+
+::selection {
+	color: $color-white;
+	background: $color-link;
+}
+
+code {
+	padding: 2px 4px;
+	@include myfont(90%, null, null, #c7254e, 'Courier New');
+	background-color: #f9f2f4;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 0;
+	box-shadow: none;
+	border: 0;
+	background-color: #eaeaea;
+	border-left: 1px solid #cecece;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0;
+	box-shadow: none;
+	border: 0;
+	background-color: #cecece;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #aaaaaa;
+}
+
+
+
+/* blocks 
+--------------------------------------------------------*/
+
+.wide {width: 100%;}
+.max-wide {max-width: 100%;}
+
+@for $i from 1 through 20 {
+	.w#{$i * 25} { width: 25px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.m#{$i * 5} { margin: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mt#{$i * 5} { margin-top: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mb#{$i * 5} { margin-bottom: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.ml#{$i * 5} { margin-left: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mr#{$i * 5} { margin-right: 5px * $i $imp; }
+}
+
+@each $float in left, right {
+	.#{$float} {float: $float;}
+}
+
+@each $display in block, none {
+	.#{$display} {display: $display;}
+}
+
+.floater {
+	float: none $imp;
+	width: 0 $imp;
+	min-width: 0 $imp;
+	max-width: 0 $imp;
+	height: 0 $imp;
+	min-height: 0 $imp;
+	max-height: 0 $imp;
+	border: 0 $imp;
+	padding: 0 $imp;
+	margin: 0 $imp;
+	background: none $imp;
+	clear: both $imp;
+}
+
+/* text tools 
+--------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+	@extend .bold;
+	line-height: 1.2;
+}
+
+h1, .h1 {font-size: $f-h1;}
+h2, .h2 {font-size: $f-h2;}
+h3, .h3 {font-size: $f-h3;}
+h4, .h4 {font-size: $f-h4;}
+h5, .h5 {font-size: $f-h5;}
+h6, .h6 {font-size: $f-h6;}
+
+.light {font-weight: 300;}
+.regular {font-weight: 400;}
+.semibold {font-weight: 600;}
+.bold {font-weight: 700;}
+
+small, .small {font-size: $f-small;}
+big, .big {font-size: $f-big;}
+sub {vertical-align: sub; font-size: $f-small;}
+sup {vertical-align: super; font-size: $f-small;}
+
+@each $align in left, right, center, justify {
+	.text-#{$align} {text-align: $align;}
+}
+
+@each $transform in uppercase, lowercase, capitalize  {
+	.#{$transform} {text-transform: $transform;}
+}
+
+@each $decoration in underline, line-through  {
+	.#{$decoration} {text-decoration: $decoration;}
+}
+
+.defaulttext {
+	@include myfont(13px, null, 19px);
+}
+
+.color {
+	&-default {color: $color;}
+	&-link {color: $color-link;}
+	&-gray {
+		color: $color-gray;
+		&-lite {color: $color-gray-lite;}
+	}
+	&-blue {color: $color-blue;}
+}
+
+.required {color: $color-error;}
+
+/* form-stuff 
+--------------------------------------------------------*/
+
+.form {
+	&-group {margin-bottom: $form-margin;}
+	
+	&-caption {
+		@include myfont(14px, 600, 16px);
+		margin-bottom: $form-submargin;
+		& .required {
+			font-size: 24px;
+			vertical-align: -3px;
+			color: $color-error;
+		}
+	}
+	
+	&-info {
+		margin-top: $form-submargin;
+		font-size: 12px;
+		color: $color-gray;
+	}
+	
+	&-error {
+		margin-top: $form-submargin;
+		@include myfont(12px, 600);
+		color: $color-error;
+	}
+	
+	&-label {@include inline;}
+
+	&-input {
+		@include inline;
+		@include mysize(100%, $form-height);
+		border: 1px solid $form-inputborder;
+		padding: 0 10px;
+		font-weight: 500;
+		background: #fff;
+		transition: border-color 0.3s ease 0s;
+		&:focus {border-color: #999;}
+		&.input-error {border-color: $color-error;}
+	}
+}
+
+textarea {
+	&.form-input {
+		height: auto;
+		padding: 10px;
+		max-width: 100%;
+		line-height: 20px;
+	}
+	&.no-resize {resize: none;}
+}
+
+input[readonly] {
+	background: #f9f9f9;
+	cursor: not-allowed;
+}
+
+/* btn */
+
+.btn {
+	@include inline;
+	@include mysize(null, $form-height);
+	padding: 0 25px;
+	@include myfont(14px, null, ($form-height - 2), #fff);
+	@include gradient($color-link, $color-link-hover);
+	transition: all 0.3s ease 0s;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 3px;
+	border: 1px solid #de8403;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	
+	&:hover {
+		@include gradient($color-link-hover, $color-link);
+		cursor: pointer;
+	}
+	
+	&-gray {
+		@include gradient(#fff, #d3d3d3);
+		border-color: #b9b9b9;
+		color: $color;
+		text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+		&:hover {@include gradient(#d3d3d3, #fff);}
+	}
+	
+	&-xs {
+		height: $form-height-xs;
+		padding: 0 15px;
+		@include myfont(13px, null, ($form-height-xs - 2));
+	}
+	
+	&-xxs {
+		height: $form-height-xxs;
+		padding: 0 10px;
+		@include myfont(12px, null, ($form-height-xxs - 2));
+	}
+	
+	&-xl {
+		height: $form-height-xl;
+		@include myfont(16px, null, ($form-height-xl - 2));
+	}
+	
+	&-xxl {
+		height: $form-height-xxl;
+		@include myfont(18px, 700, ($form-height-xxl - 2));
+	}
+}
+
+/* note
+--------------------------------------------------------*/
+
+.note {
+	padding: 20px;
+	background: #f7f7f7;
+	line-height: 1.5;
+	
+	& a {
+		@include myfont(null, 700, null, inherit);
+	}
+}
+
+/* text-editor 
+--------------------------------------------------------*/
+
+.text-editor {
+	@include myfont(14px, null, 1.7);
+	
+	& p {
+		margin-bottom: 10px;
+		& + h1, + h2, + h3, + h4, + h5, + h6 {margin-top: 20px;}
+	}
+	& > p:last-child, * p:last-child {margin-bottom: 0;}
+	
+	& ul, ol {
+		margin: 10px 0 20px; padding: 0 0 0 40px;
+		& > li {list-style: inherit;}
+	}
+	& ul {list-style: disc inside;}
+	& ol {list-style: decimal inside;}
+	
+	& h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 15px;
+		font-weight: 700;
+	}
+	& strong {font-weight: 700;}
+	
+	& hr {
+		margin: 15px 0;
+		border-top: 1px solid $form-inputborder;
+	}
+	
+	& table {
+		$border: 1px solid $form-inputborder;
+		$padding: 8px 10px;
+		border: $border;
+		margin-bottom: 20px;
+		& th {
+			padding: $padding;
+			border: $border;
+			font-weight: 600;
+		}
+		& td {
+			padding: $padding;
+			border: $border;
+		}
+	}
+	
+	& blockquote {
+		padding: 10px 0 10px 20px;
+		margin: 20px 40px;
+		border-left: 4px solid $form-inputborder;
+	}
+	
+	& .marker {
+		padding: 1px 3px;
+		background: #e5e5e5;
+	}
+	
+	& img {
+		max-width: 100%;
+	}
+}
+

@@ -1,0 +1,56 @@
+.stars {
+	display: inline-block;
+	vertical-align: 0px;
+	font-size: 0;
+	width: 97px;
+	height: 15px;
+	background: url('img/stars.png') no-repeat;
+}
+
+.stars._1 {background-position: left top;}
+.stars._2 {background-position: left -15px;}
+.stars._3 {background-position: left -30px;}
+.stars._4 {background-position: left -45px;}
+.stars._5 {background-position: left -60px;}
+
+.stars-select {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+}
+
+.stars-label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.stars-select .star {
+	display: inline-block;
+	vertical-align: middle;
+	width: 15px;
+	height: 15px;
+	background: url('img/star.png') no-repeat left top;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.stars-select .star.active {
+	background: url('img/star-active.png') no-repeat left top;
+}
+
+.stars-bar {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+	width: 97px;
+	height: 15px;
+	background: url('img/stars-bar.png') no-repeat left top;
+}
+
+.stars-bar-in {
+	position: absolute;
+	left: 0; top: 0;
+	height: 100%;
+	background: url('img/stars-bar.png') no-repeat left bottom;
+}

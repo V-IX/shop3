@@ -1,0 +1,1809 @@
+@import 'config.scss';
+
+/* home 
+--------------------------------------------------------*/
+
+.offer {
+	margin-bottom: 20px;
+	
+	&-slider {
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	&-slide {
+		position: relative;
+		display: block;
+		color: inherit;
+		text-decoration: none;
+		height: 400px;
+		line-height: 350px;
+		
+		& .img {
+			@include position(absolute, 0, 0);
+			& img {
+				display: block;
+				width: 100%;
+			}
+		}
+		
+		& .in {
+			position: relative;
+			z-index: 10;
+			@include inline;
+			line-height: 1;
+			padding: 25px 40px;
+			background: rgba(255, 255, 255, 0.4);
+			margin: 0 50px;
+			text-align: left;
+			max-width: 50%;
+		}
+		
+		& .title {
+			@include myfont(28px, 700, 35px, #151515);
+			text-transform: uppercase;
+		}
+		
+		& .descr {
+			margin-top: 10px;
+			@include myfont(20px, null, 30px, $color-gray);
+		}
+		
+		& .btn {
+			margin-top: 15px;
+			height: 45px;
+			line-height: 43px;
+			font-size: 16px;
+			padding: 0 30px;
+			border-radius: 5px;
+		}
+	}
+	
+	&-btns {
+		@include position(absolute, 0, 50%);
+		z-index: 200;
+		width: 100%;
+		
+		& > a {
+			display: block;
+			@include position(absolute, null, -25px);
+			@include mysize(50px, 50px);
+			border: 2px solid #fff;
+			border-radius: 100%;
+			@include myfont(30px, null, 46px);
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			transition: all 0.3s ease 0s;
+			
+			&.flex {
+				&-prev {left: 30px; padding-right: 4px;}
+				&-next {right: 30px; padding-left: 4px;}
+			}
+			&:hover {
+				background: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+}
+
+.home {
+
+	&-title {
+		@include myfont(26px, 700);
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	
+	&-catalogs {
+		margin-bottom: 40px;
+		
+		& .list {
+		
+			& > li {
+				float: left;
+				width: 25%;
+			}
+		}
+		
+		& .item {
+			position: relative;
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			padding: 15px 25px 20px;
+			
+			& .in {
+				position: relative;
+				z-index: 5;
+			}
+			
+			&:hover {
+				
+				& .title span {text-decoration: none;}
+			}
+			
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+			}
+			
+			&._1 {
+				background: #f1920c;
+				&:after {
+					@include mysize(100px, 118px);
+					right: 0; bottom: 0;
+					background: url('../img/home/1.png') no-repeat right bottom;
+				}
+			}
+			&._2 {
+				background: #296b32;
+				&:after {
+					@include mysize(140px, 99px);
+					right: 0; bottom: 0;
+					background: url('../img/home/2.png') no-repeat right bottom;
+				}
+			}
+			&._3 {
+				background: #256eb1;
+				&:after {
+					@include mysize(124px, 79px);
+					right: 0; bottom: 0;
+					background: url('../img/home/3.png') no-repeat right bottom;
+				}
+			}
+			&._4 {
+				background: #8e2b59;
+				&:after {
+					@include mysize(146px, 91px);
+					right: 0; bottom: 0;
+					background: url('../img/home/4.png') no-repeat right bottom;
+				}
+			}
+		}
+		
+		& .title {
+			height: 44px;
+			line-height: 44px;
+			margin-bottom: 10px;
+			
+			& > span {
+				@include inline;
+				@include myfont(16px, 700, 22px);
+				text-decoration: underline;
+			}
+		}
+		
+		& .btn {
+			height: 26px;
+			@include myfont(12px, 700, 24px);
+			padding: 0 15px;
+		}
+	}
+	
+	&-products {
+		margin-bottom: 40px;
+	}
+	
+	&-news {
+		padding-top: 40px;
+		margin-bottom: 40px;
+		background: url('../img/block-shadow.png') no-repeat center top;
+		
+		&-bottom {
+			margin-top: 20px;
+			text-align: right;
+			@include myfont(12px);
+			
+			& a {color: $color-blue;}
+		}
+	}
+	
+	&-about {
+		padding: 30px 0;
+		background: #f7f7f7;
+		margin-bottom: 40px;
+		
+		& .img {
+			position: relative;
+			z-index: 5;
+			float: left;
+			width: 250px;
+			margin-right: -250px;
+			
+			& img {
+				display: block;
+				width: 100%;
+			}
+		}
+		& .descr {
+			float: right;
+			width: 100%;
+			padding-left: 280px;
+			
+			& .text-editor {font-size: 12px;}
+		}
+		
+		&-bottom {
+			margin-top: 10px;
+			text-align: right;
+			@include myfont(12px);
+			
+			& a {color: $color-blue;}
+		}
+	}
+}
+
+/* catalog 
+--------------------------------------------------------*/
+
+.catalog {
+	
+	&-left {
+		position: relative;
+		z-index: 5;
+		float: left;
+		width: 230px;
+		margin-right: -230px;
+	}
+	&-right {
+		float: right;
+		width: 100%;
+		padding-left: 250px;
+	}
+	
+	&-mobile {
+		display: none;
+	}
+	
+	
+	
+	&-lbanner {margin-top: 20px;}
+	&-banner {margin-top: 40px;}
+}
+
+.cmenu {
+	background: #f7f7f7;
+	
+	&-btn {
+		display: none;
+		@include myfont(14px, 700, 18px, $color);
+		padding: 12px 50px 10px 15px;
+		text-decoration: none;
+		background: #f7f7f7;
+	}
+	
+	&-title {
+		padding: 20px 20px 15px;
+		@include myfont(20px, 700);
+	}
+	
+	&-list {
+		padding-bottom: 20px;
+		
+		& > li {
+			border-top: 1px solid #e5e5e5;
+			
+			& > a {
+				position: relative;
+				padding: 10px 30px 10px 20px;
+				text-decoration: none;
+				color: inherit;
+				display: block;
+				
+				& > .toggle {
+					display: block;
+					@include position(absolute, null, 10px, 10px);
+				}
+			}
+			
+			& > .cmenu-child {
+				padding: 10px 0;
+				border-top: 1px solid #e5e5e5;
+				border-left: 2px solid #f7f7f7;
+				border-right: 2px solid #f7f7f7;
+				background: #fcfcfc;
+			}
+		}
+	}
+	
+	&-child {
+		font-size: 12px;
+		
+		& > li {
+			
+			& > a {
+				position: relative;
+				display: block;
+				padding: 7px 30px 7px 10px;
+				color: inherit;
+				text-decoration: none;
+				
+				& > .toggle {
+					display: block;
+					@include position(absolute, null, 7px, 10px);
+				}
+			}
+		}
+	}
+	
+	& a {
+		transition: all 0.3s ease 0s;
+		&:hover {text-decoration: underline;}
+		&._open {font-weight: 700}
+		&._current {color: $color-blue}
+	}
+}
+
+.filter {
+
+	&-btn {
+		display: none;
+		@include position(absolute, null, 0, 0, null, 4);
+		@include mysize(40px, 40px);
+		@include myfont(16px, null, 40px, $color-gray-lite);
+		text-align: center;
+		background: #e7e7e7;
+	}
+	
+	&-form {
+		margin-top: 20px;
+		background: #f7f7f7;
+		padding: 20px;
+	}
+	
+	&-list {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #dfdfdf;
+		& > li {
+			margin-bottom: 20px;
+			&:last-child {margin-bottom: 0;}
+		}
+		
+		& .title {
+			@include myfont(16px, 700, 1);
+			margin-bottom: 15px;
+		}
+		
+		& .chlist {
+			
+			& > li {
+				margin-bottom: 8px;
+				&:last-child {margin-bottom: 0;}
+			}
+			
+			& label {
+				position: relative;
+				display: block;
+				padding-left: 25px;
+				
+				& .checker {
+					@include position(absolute, 0, 1px);
+				}
+			}
+		}
+		
+		& .cols {
+			margin: 0 -4px 15px;
+			
+			& > li {
+				float: left;
+				width: 50%;
+				padding: 0 4px;
+			}
+			
+			& .c-label {
+				float: left;
+				width: 15px;
+				font-size: 13px;
+				margin-right: -15px;
+				padding-top: 7px;
+			}
+			& .c-input {
+				float: right;
+				width: 100%;
+				padding-left: 20px;
+				
+				& input {
+					height: $form-height-xs;
+				}
+			}
+		}
+	}
+	
+	&-actions {
+		font-size: 12px;
+		
+		& .count {
+			color: $color-gray;
+			margin-top: 10px;
+		}
+		& ._reset {margin-left: 15px;}
+	}
+}
+
+.banner {
+	display: block;
+	
+	& img {
+		display: block;
+		max-width: 100%;
+	}
+}
+
+/* products 
+--------------------------------------------------------*/
+
+.products {
+
+	&-list {
+	
+		& > ul {
+			margin: 0 -7px -15px;
+			
+			& > li {
+				float: left;
+				width: 25%;
+				padding: 0 7px;
+				margin-bottom: 15px;
+			}
+		}
+		
+		& .floater {
+			&._2 {display: none;}
+			&._3 {display: none;}
+		}
+	}
+
+	&-item {
+		display: block;
+		border: 1px solid #e1e1e1;
+		padding: 10px 10px 15px;
+		color: inherit;
+		text-decoration: none;
+		
+		& .img {
+			position: relative;
+			margin: -5px -5px 10px;
+			
+			& img {
+				display: block;
+				width: 100%;
+			}
+			
+			& .sticker {
+				@include position(absolute, -5px, 5px, null, null, 5);
+				padding: 3px 10px 4px 10px;
+				@include myfont(12px, null, 16px, #fff);
+				
+				&:before {
+					content: "";
+					display: block;
+					@include position(absolute, 100%, 0);
+					border: 6px solid transparent;
+					border-left-color: $color-blue;
+					border-top-color: $color-blue;
+				}
+				
+				&:after {
+					content: "";
+					display: block;
+					@include position(absolute, 100%, null, null, 0);
+					border: 6px solid transparent;
+					border-left-color: $color-blue;
+					border-bottom-color: $color-blue;
+				}
+				
+				&._new {
+					background: $color-blue;
+					&:before {
+						border-left-color: $color-blue;
+						border-top-color: $color-blue;
+					}
+					&:after {
+						border-left-color: $color-blue;
+						border-bottom-color: $color-blue;
+					}
+				}
+				&._hit {
+					background: $color-green;
+					&:before {
+						border-left-color: $color-green;
+						border-top-color: $color-green;
+					}
+					&:after {
+						border-left-color: $color-green;
+						border-bottom-color: $color-green;
+					}
+				}
+				&._discount {
+					background: $color-error;
+					&:before {
+						border-left-color: $color-error;
+						border-top-color: $color-error;
+					}
+					&:after {
+						border-left-color: $color-error;
+						border-bottom-color: $color-error;
+					}
+				}
+			}
+		}
+		
+		& .title {
+			@include myfont(16px, 700, 20px);
+			@include ellipsis;
+			text-decoration: underline;
+		}
+		
+		& .brief {
+			@include myfont(12px, null, 16px, $color-gray);
+			height: 32px;
+			overflow: hidden;
+			margin-top: 5px;
+		}
+		
+		& .price {
+			margin-top: 10px;
+			
+			&-new {
+				@include inline;
+				@include myfont(16px, 700, 20px, $color-blue);
+			}
+			&-old {
+				@include inline;
+				@include myfont(13px, 700, 20px, $color-gray-lite);
+				margin-left: 10px;
+			}
+		}
+		& .btn {
+			margin-top: 10px;
+			& .fa {margin-right: 5px;}
+		}
+		
+		&:hover {
+			
+			& .title {
+				color: $color-link;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&-slider {
+	
+		&-wrap {
+			position: relative;
+			padding: 0 5px;
+			margin: 0 -5px;
+		}
+		
+		& .slides {
+			
+			& > li {
+				float: left;
+				max-width: 228px;
+			}
+		}
+		
+		&-item {
+			padding: 0 5px;
+		}
+	
+		&-btns {
+			@include position(absolute, 0, 50%);
+			z-index: 200;
+			width: 100%;
+			
+			& > a {
+				display: block;
+				@include position(absolute, null, -25px);
+				@include mysize(50px, 50px);
+				border: 2px solid $color-link;
+				border-radius: 100%;
+				@include myfont(30px, null, 46px);
+				color: $color-link;
+				text-decoration: none;
+				text-align: center;
+				transition: all 0.3s ease 0s;
+				
+				&.flex {
+					&-prev {left: -10px; padding-right: 4px;}
+					&-next {right: -10px; padding-left: 4px;}
+				}
+				&:hover {
+					background: $color-link;
+					color: #fff;
+				}
+			}
+		}
+		
+		&-nav {
+			margin-top: 20px;
+			text-align: center;
+				font-size: 0;
+			
+			& li {
+				@include inline;
+				margin-right: 8px;
+				
+				&:last-child {margin-right: 0;}
+			}
+			
+			& a {
+				display: block;
+				@include mysize(12px, 12px);
+				border: 2px solid $color-link;
+				border-radius: 100%;
+				transition: all 0.3s ease 0s;
+				
+				&:hover {background: $color-link;}
+				&.flex-active {background: $color-link;}
+			}
+		}
+	}
+}
+
+.product {
+	
+	&-left {
+		position: relative;
+		z-index: 5;
+		float: left;
+		width: 230px;
+		margin-right: -230px;
+	}
+	&-right {
+		float: right;
+		width: 100%;
+		padding-left: 260px;
+	}
+	
+	&-view {
+	
+	}
+	
+	&-gallery {
+		position: relative;
+		z-index: 5;
+		float: left;
+		width: 330px;
+		margin-right: -330px;
+		
+		& .gallery {
+			
+			& .img {
+				position: relative;
+				display: block;
+				border: 1px solid #e5e5e5;
+				color: #fff;
+				text-decoration: none;
+				
+				& img {
+					display: block;
+					width: 100%;
+				}
+				
+				&:before {
+					content: "";
+					display: block;
+					@include mysize(100%, 100%);
+					@include position(absolute, 0, 0, null, null, 10);
+					background: rgba(0, 0, 0, 0.3);
+					opacity: 0;
+					transition: all 0.3s ease 0s;
+				}
+				& .zoom {
+					display: block;
+					@include mysize(60px, 60px);
+					@include position(absolute, 50%, 50%, null, null, 15);
+					margin: -30px 0 0 -30px;
+					@include myfont(24px, null, 60px);
+					text-align: center;
+					background: rgba(0, 0, 0, 0.5);
+					border-radius: 100%;
+					opacity: 0;
+					transition: all 0.3s ease 0s;
+				}
+				
+				&:hover {
+					
+					&:before {opacity: 1;}
+					& .zoom {opacity: 1;}
+				}
+			}
+			
+			&-slider {
+				overflow: hidden;
+				height: 106px;
+				
+				&-wrap {
+					position: relative;
+					margin: 5px -3px 0;
+				}
+				
+				& ul {
+					
+					& > li {
+						float: left;
+						width: 112px;
+					}
+				}
+				
+				& .img {
+					margin: 0 3px;
+				}
+				
+				&-btns {
+					@include position(absolute, 0, 50%);
+					z-index: 200;
+					width: 100%;
+					
+					& > a {
+						display: block;
+						@include position(absolute, null, -15px);
+						@include mysize(30px, 30px);
+						border: 2px solid $color-link;
+						border-radius: 100%;
+						@include myfont(22px, null, 26px);
+						color: $color-link;
+						text-decoration: none;
+						text-align: center;
+						transition: all 0.3s ease 0s;
+						
+						&.flex {
+							&-prev {left: -10px; padding-right: 2px;}
+							&-next {right: -10px; padding-left: 2px;}
+						}
+						&:hover {
+							color: #fff;
+							background: $color-link;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&-info {
+		float: right;
+		width: 100%;
+		padding-left: 360px;
+		
+		&-sep {
+			margin: 15px 0;
+			border-top: 1px solid #eee;
+		}
+	}
+	
+	&-articul {
+		float: left;
+		width: 50%;
+		@include myfont(12px, null, 15px, $color-gray-lite);
+	}
+	&-raiting {
+		float: right;
+		width: 50%;
+		text-align: right;
+		line-height: 15px;
+		
+		& .stars-bar {margin-right: 10px;}
+		
+		& a {
+			@include inline;
+			@include myfont(13px, null, null, $color-gray);
+			text-decoration: none;
+			border-bottom: 1px dotted $color-gray-lite;
+			transition: all 0.3s ease 0s;
+			
+			&:hover {border-color: transparent;}
+		}
+	}
+	
+	&-features {
+		margin-top: 15px;
+		
+		& .row {
+			
+			& > li {
+				margin-bottom: 8px;
+			}
+		}
+		
+		& a {
+			color: $color-blue;
+			font-weight: 700;
+		}
+		
+		& .label {color: $color-gray-lite; font-weight: 400;}
+	}
+	
+	&-mods {
+		
+		& .title {
+			@include myfont(13px, 700);
+			margin-bottom: 10px;
+		}
+		
+		&-list {
+			
+			& > li {
+				margin-bottom: 8px;
+				&:last-child {margin-bottom: 0;}
+			}
+			
+			& label {display: block;}
+			
+			& ._articul {@include myfont(12px, null, null, $color-gray);}
+		}
+	}
+	
+	&-price {
+		
+		& .price {
+			@include inline;
+			@include myfont(24px, 700);
+		}
+		& .oldprice {
+			position: relative;
+			@include inline;
+			margin-left: 20px;
+			@include myfont(16px, 700, null, $color-gray-lite);
+			
+			&:before {
+				content: "";
+				display: block;
+				@include position(absolute, 0, 50%, null, null, 5);
+				width: 100%;
+				border-top: 1px solid $color-error;
+			}
+		}
+	}
+	
+	&-discover {
+		@include myfont(12px, 700, null, $color-error);
+		
+		& ._av {
+			@include inline;
+			margin-left: 20px;
+		}
+	}
+	
+	&-panel {
+		margin-top: 10px;
+		
+		& .linkclick {
+			@include myfont(12px, 700, null, $color-blue);
+		}
+	}
+	
+	&-chars {
+		@include myfont(13px, null, 18px);
+		
+		& > li {
+			margin-bottom: 7px;
+			&:last-child {margin-bottom: 0;}
+		}
+	}
+	
+	&-tabs {
+		margin-top: 30px;
+		
+		&-list {
+			padding-left: 20px;
+			border-bottom: 1px solid #cecece;
+			margin-bottom: 20px;
+			
+			& > li {
+				@include inline;
+			
+				& a {
+					display: block;
+					color: $color-gray;
+					text-decoration: none;
+					line-height: 20px;
+					padding: 10px 25px;
+					background: #fff;
+					border: 1px solid transparent;
+					border-bottom: 0;
+					border-radius: 5px 5px 0 0;
+					
+					&:hover {
+						color: $color;
+						text-decoration: underline;
+					}
+					&.active {
+						font-weight: 700;
+						color: $color-link;
+						padding-bottom: 11px;
+						border-color: #cecece;
+						margin-bottom: -1px;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		
+		&-item {
+			display: none;
+			&.active {display: block;}
+		}
+	}
+	
+	&-comments {
+		
+		& > li {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #eee;
+			
+			&:last-child {
+				margin-bottom: 20px;
+			}
+		}
+		
+		& .title {
+			position: relative;
+			padding-right: 120px;
+			@include myfont(16px, 700, 20px);
+			margin-bottom: 7px;
+			
+			& span {
+				@include myfont(12px, 400, null, $color-gray-lite);
+				margin-left: 10px;
+			}
+			
+			& .stars {
+				@include position(absolute, null, 3px, 0);
+			}
+		}
+		
+		& .text {
+			@include myfont(13px, null, 19px);
+			
+			& .ulink {
+				margin-top: 5px;
+				font-weight: 700;
+				@include ellipsis;
+				
+				& a {color: $color-blue;}
+			}
+		}
+		
+		&-label {
+			margin-top: 7px;
+		}
+		&-btn {
+			text-align: right;
+		}
+	}
+	
+	&-section {
+		padding-top: 40px;
+		margin-top: 40px;
+		background: url('../img/block-shadow.png') no-repeat center top;
+	}
+}
+
+/* cart 
+--------------------------------------------------------*/
+
+.cart {
+
+	&-left {
+		float: left;
+		width: 100%;
+		padding-right: 500px;
+		margin-right: -480px;
+	}
+	&-right {
+		float: right;
+		width: 480px;
+	}
+	
+	&-list {
+		
+		&-wrap {
+			border: 1px solid #e5e5e5;
+			max-height: 700px;
+			overflow: auto;
+		}
+		
+		& > li {
+			padding: 15px 10px;
+			border-bottom: 1px solid #e5e5e5;
+			
+			&:last-child {border-bottom: 0;}
+			
+			&:hover {background: #f9f9f9;}
+		}
+		
+		&-item {
+		
+			position: relative;
+			
+			& .img {
+				position: relative;
+				z-index: 5;
+				float: left;
+				width: 100px;
+				margin-right: -100px;
+				
+				& img {
+					display: block;
+					width: 100%;
+				}
+			}
+			& .descr {
+				float: right;
+				width: 100%;
+				padding-left: 120px;
+			}
+			
+			& .item {
+				display: block;
+				color: inherit;
+				text-decoration: none;
+				
+				&:hover .title {
+					color: $color-link;
+					text-decoration: none;
+				}
+			}
+			
+			& .articul {
+				@include myfont(11px, null, null, $color-gray-lite);
+				margin-bottom: 5px;
+			}
+			& .title {
+				@include myfont(15px, 700);
+				text-decoration: underline;
+				margin-bottom: 3px;
+				
+				&._2 {text-decoration: none;}
+			}
+			& .brief {
+				@include myfont(13px, null, 18px, $color-gray);
+			}
+			
+			& .counter {
+				margin-top: 10px;
+				
+				& .price {
+					position: relative;
+					float: left;
+					width: 90px;
+					padding-right: 15px;
+					@include myfont(14px, 700, $form-height);
+					margin-right: 10px;
+					
+					&:before {
+						content: "X";
+						display: block;
+						@include position(absolute, null, 0, 0);
+						@include myfont(13px, 400, null, $color-gray);
+						
+					}
+				}
+				& .subtotal {
+					float: right;
+					width: 110px;
+					@include myfont(16px, 700, $form-height, $color-blue);
+				}
+				& .count {
+					float: left;
+					@include myfont(16px, 700, $form-height);
+				}
+			}
+			
+			& .remove {
+				@include position(absolute, null, -5px, 0);
+				display: block;
+				@include mysize(15px, 15px);
+				@include myfont(11px, null, 13px, $color-error);
+				border: 1px solid transparent;
+				text-decoration: none;
+				text-align: center;
+				border-radius: 100%;
+				opacity: 0.7;
+				transition: all 0.3s ease 0s;
+				
+				&:hover {
+					border-color: $color-error;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	&-total {
+		margin-top: 20px;
+		padding: 20px;
+		background: #f7f7f7;
+		
+		&-list {
+			
+			& > li {
+				margin-bottom: 10px;
+				&:last-child {margin-bottom: 0;}
+				&._big {font-size: 20px;}
+			}
+			
+			& .label {
+				float: left;
+				width: 170px;
+				margin-right: -170px;
+			}
+			& .value {
+				float: right;
+				width: 100%;
+				padding-left: 190px;
+				text-align: right;
+				font-weight: 600;
+			}
+		}
+	}
+	
+	&-actions {
+		margin-top: 20px;
+		
+		& .btn {
+			padding: 0 50px;
+			margin-right: 40px;
+		}
+	}
+	
+	&-panels {
+		
+		&-list {
+			
+			& > li {
+				margin-bottom: 20px;
+				
+				&:last-child {margin-bottom: 0;}
+			}
+		}
+		
+		&-item {
+			border: 1px solid #e5e5e5;
+			padding: 20px;
+			
+			& .caption {
+				@include myfont(13px, 700, null, $color-gray);
+				margin-bottom: 7px;
+			}
+			
+			& .row .form-group {margin-bottom: 0;}
+		}
+		
+		&-title {
+			@include myfont(18px, 700, 1);
+			margin-bottom: 20px;
+		}
+	}
+	
+	&-checkers {
+		
+		&-list {
+			& > li {
+				margin-bottom: 5px;
+				&:last-child {margin-bottom: 0;}
+			}
+		}
+			
+		&-item {
+			position: relative;
+			display: block;
+			border: 2px solid #d8d8d8;
+			padding: 8px 30px 8px 15px;
+			border-radius: 4px;
+			transition: border 0.3s ease 0s;
+			
+			&:hover {
+				border-color: $color-link;
+				cursor: pointer;
+			}
+			
+			& input, & .radio {
+				display: none;
+			}
+			
+			& .fa {
+				display: none;
+				@include position(absolute, null, 10px, 10px);
+				color: $color-green;
+			}
+			
+			& .brief {
+				@include myfont(12px, null, 16px, $color-gray);
+				margin-top: 3px;
+			}
+			
+			&.current {
+				background: #fbfbfb;
+				font-weight: 700;
+				border-color: $color-link;
+				
+				& .fa {display: block;}
+			}
+		}
+	}
+	
+	&-hint {
+		@include myfont(13px, null, 19px);
+		display: none;
+	}
+	
+	&-counter {
+		position: relative;
+		@include inline;
+		@include mysize(100px, $form-height);
+		
+		&-input {
+			display: block;
+			@include mysize(100%, $form-height);
+			border: 1px solid $form-inputborder;
+			padding: 0 30px;
+			@include myfont(16px, 700);
+			text-align: center;
+			border-radius: 3px;
+			transition: all 0.3s ease 0s;
+			
+			&:focus {border-color: $color-gray-lite;}
+		}
+		
+		&-btn {
+			display: block;
+			@include position(absolute, null, 1px, null, null, 5);
+			@include mysize(30px, $form-height - 2);
+			@include myfont(22px, 700, $form-height - 2, $color-gray-lite);
+			text-align: center;
+			text-decoration: none;
+			transition: all 0.3s ease 0s;
+			
+			&:hover {color: $color-gray; background: #f7f7f7;}
+			
+			&._prev {left: 1px; border-radius: 2px 0 0 2px;}
+			&._next {right: 1px; border-radius: 0 2px 2px 0;}
+		}
+	}
+	
+	&-confirm {
+		
+		& > li {
+			margin-bottom: 10px;
+			&:last-child {margin-bottom: 0;}
+		}
+		
+		& .label {
+			float: left;
+			width: 170px;
+			margin-right: -170px;
+			font-weight: 700;
+		}
+		& .value {
+			float: right;
+			width: 100%;
+			padding-left: 190px;
+		}
+	}
+}
+
+/* news 
+--------------------------------------------------------*/
+
+.news {
+
+	&-list {
+		
+		& > ul {
+			margin-bottom: -40px;
+			& > li {
+				margin-bottom: 40px;
+			}
+		}
+		
+		& .floater {
+			&._2 {display: none;}
+		}
+	}
+	
+	&-item {
+		display: block;
+		color: inherit;
+		text-decoration: none;
+		
+		& .img {
+			position: relative;
+			z-index: 5;
+			float: left;
+			width: 100px;
+			margin-right: -100px;
+			
+			& img {
+				display: block;
+				width: 100%;
+			}
+		}
+		& .descr {
+			float: right;
+			width: 100%;
+			padding-left: 120px;
+		}
+		
+		& .title {
+			@include myfont(16px, 700, 20px);
+			margin-bottom: 3px;
+			max-height: 40px;
+			overflow: hidden;
+		}
+		& .brief {
+			@include myfont(12px, null, 16px, $color-gray);
+			margin-bottom: 3px;
+			max-height: 48px;
+			overflow: hidden;
+		}
+		& .date {
+			@include myfont(12px, 700);
+		}
+		
+		&:hover {
+			
+			& .title {
+				text-decoration: underline;
+				color: $color-link;
+			}
+		}
+	}
+
+	&-slider {
+	
+		&-wrap {
+			position: relative;
+		}
+		
+		& .slides {
+			
+			& > li {
+				float: left;
+				width: 380px;
+			}
+		}
+		
+		&-item {
+			padding: 0 10px;
+		}
+	}
+	
+	&-other {
+		padding-top: 40px;
+		margin-top: 40px;
+		background: url('../img/block-shadow.png') no-repeat center top;
+	}
+	
+	&-date {
+		@include myfont(13px, 700, null, $color-gray);
+		margin-bottom: 20px;
+	}
+}
+
+/* mfrs 
+--------------------------------------------------------*/
+
+.mfrs {
+
+	&-list {
+		
+		& > ul {
+			margin-bottom: -30px;
+			& > li {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	
+	&-item {
+		display: block;
+		color: inherit;
+		text-decoration: none;
+		
+		& .img {
+			width: 150px;
+			margin-bottom: 20px;
+			
+			& img {
+				display: block;
+				width: 100%;
+			}
+		}
+		
+		& .title {
+			@include myfont(16px, 700, 20px);
+			margin-bottom: 3px;
+			max-height: 40px;
+			overflow: hidden;
+		}
+		& .brief {
+			@include myfont(12px, null, 16px, $color-gray);
+			margin-bottom: 3px;
+			max-height: 48px;
+			overflow: hidden;
+		}
+		& .date {
+			@include myfont(12px, 700);
+		}
+		
+		&:hover {
+			
+			& .title {
+				text-decoration: underline;
+				color: $color-link;
+			}
+		}
+	}
+	
+	&-img {
+		display: block;
+		
+		& img {
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	&-pageimg {
+		@include position(absolute, null, null, 0, 5px);
+		display: block;
+		height: 50px;
+	}
+
+	&-slider {
+	
+		&-wrap {
+			position: relative;
+		}
+		
+		& .slides {
+			
+			& > li {
+				float: left;
+				width: 380px;
+			}
+		}
+		
+		&-item {
+			padding: 0 30px;
+		}
+	}
+}
+
+/* reviews 
+--------------------------------------------------------*/
+
+.reviews {
+	
+	&-list {
+		
+		& > li {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #e5e5e5;
+		}
+	}
+	
+	&-item {
+		
+		& .img {
+			float: left;
+			width: 100px;
+			margin-right: -100px;
+			
+			& img {
+				display: block;
+				width: 100%;
+				border-radius: 100%;
+			}
+		}
+		& .descr {
+			padding-left: 130px;
+		}
+		
+		& .title {
+			@include myfont(16px, 700, 22px);
+			margin-bottom: 5px;
+			
+			& span {
+				@include myfont(12px, 400, null, $color-gray-lite);
+				margin-left: 10px;
+			}
+		}
+		
+		& .text {
+			padding: 15px 20px;
+			background: #f7f7f7;
+			
+			& .ulink {
+				margin-top: 5px;
+				@include myfont(12px, 700, null, $color-blue);
+				@include ellipsis;
+				
+				& a {color: $color-blue;}
+			}
+		}
+	}
+}
+
+.comments {
+	
+	&-form {
+		width: 600px;
+		
+		&-title {
+			@include myfont(20px, 700);
+			margin-bottom: 15px;
+		}
+		
+		& .form-group {margin-bottom: 10px;}
+	}
+}
+
+/* faq 
+--------------------------------------------------------*/
+
+.faq {
+	
+	&-list {
+		& > li {
+			margin-bottom: 15px;
+			&:last-child {margin-bottom: 0;}
+		}
+	}
+	
+	&-item {
+		
+		& .title {
+			@include myfont(18px, 700, 26px, $color-blue);
+			
+			& a {
+				color: inherit;
+				text-decoration: none;
+				border-bottom: 1px dotted $color-blue;
+				transition: all 0.3s ease 0s;
+				
+				&:hover {border-color: transparent;}
+			}
+		}
+		
+		& .text {
+			display: none;
+			margin-top: 10px;
+			padding: 15px 20px;
+			background: #f7f7f7;
+		}
+		
+		&._open {
+			
+			& .title {
+				color: $color;
+				
+				& a {border-color: transparent;}
+			}
+		}
+	}
+}
+
+/* popups 
+--------------------------------------------------------*/
+
+.popup {
+	position: relative;
+    width: 320px;
+    padding: 25px 30px 30px;
+    background: #fff;
+    text-align: center;
+	display: none;
+	
+	&-close {
+		@include position(absolute, null, 10px, 10px);
+		@include mysize(11px, 12px);
+		background: url('../img/x.png') no-repeat center;
+		transition: all 0.3s ease 0s;
+		opacity: 0.5;
+		
+		&:hover {
+			cursor: pointer;
+			opacity: 0.7;
+		}
+	}
+	
+	& .title {
+		@include myfont(20px, 700, 24px);
+	}
+	& .descr {
+		line-height: 20px;
+		margin-top: 5px;
+		color: $color-gray;
+	}
+	
+	& .form {
+		margin-top: 15px;
+		
+		& .form-group {margin-bottom: 8px}
+	}
+	
+	&._popup {
+		&_comments {width: 400px;}
+	}
+	
+	&-cart {
+		width: 500px;
+		padding: 0;
+		
+		&-top {
+			padding: 20px 25px;
+		}
+		
+		&-bottom {
+			padding: 20px 25px;
+			background: #f7f7f7;
+			
+			& .form {
+				position: relative;
+				padding-right: 140px;
+				margin: 15px 30px 0;
+				
+				& .btn {
+					width: 130px;
+					@include position(absolute, null, 0, 0);
+				}
+			}
+		}
+		&-descr {
+			text-align: left;
+		}
+	}
+}
+
+/* contacts 
+--------------------------------------------------------*/
+
+.contacts {
+	
+	&-left {
+		float: left;
+		width: 100%;
+		padding-right: 650px;
+		margin-right: -550px;
+	}
+	
+	&-right {
+		float: right;
+		width: 100%;
+		width: 550px;
+	}
+	
+	&-title {
+		@include myfont(20px, 700, 1);
+		margin-bottom: 15px;
+	}
+	
+	&-map {
+		padding: 2px;
+		border: 1px solid #e5e5e5;
+		margin-bottom: 30px;
+		
+		& iframe {display: block;}
+	}
+	
+	&-list {
+		margin-bottom: 30px;
+		
+		& > li {
+			margin-bottom: 8px;
+			&:last-child {margin-bottom: 0;}
+			
+			&.phone {
+				@include myfont(16px, null, 1)
+			}
+			&.email {
+				margin-top: 15px;
+				@include myfont(13px);
+				
+				& span {text-decoration: underline; color: $color-blue; font-weight: 700;}
+			}
+			&.skype {
+				@include myfont(13px);
+			}
+		}
+	}
+	
+	&-text {
+		line-height: 20px;
+		
+		&._small {
+			@include myfont(12px, null, 19px);
+		}
+	}
+	
+	&-icon {
+		position: relative;
+		padding-left: 30px;
+		
+		& .fa {
+			@include position(absolute, 0, 2px);
+			@include myfont(16px, null, null, $color-gray-lite)
+		}
+	}
+}
+
+/* errors 
+--------------------------------------------------------*/
+
+.errors {
+	
+	& .num {
+		@include myfont(100px, null, 1, #d8d8d8);
+	}
+	& .text {
+		margin-top: 20px;
+		@include myfont(13px, null, 19px);
+	}
+}
+
+/* cap 
+--------------------------------------------------------*/
+
+.cap {
+	padding: 50px;
+	background: #f7f7f7;
+	
+	&-form {
+		width: 500px;
+		margin: 0 auto;
+		padding: 20px 30px;
+		background: #fff;
+		text-align: center;
+	}
+	
+	& .img {
+		margin-bottom: 15px;
+		
+		& img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+			max-height: 50px;
+		}
+	}
+	
+	& .title {
+		@include myfont(30px, 700, 36px);
+		text-transform: uppercase;
+	}
+	
+	& .subtitle {
+		margin-top: 10px;
+		@include myfont(20px, 700, 24px, $color-link);
+	}
+	& .text {
+		margin-top: 10px;
+		@include myfont(13px, null, 19px, $color-gray)
+	}
+	
+	& .info {
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid #e5e5e5;
+		
+		& .left {
+			@include myfont(13px, 700);
+		}
+		& .right {
+			text-align: right;
+			@include myfont(13px, null, null, $color-blue);
+			text-decoration: underline;
+		}
+	}
+}

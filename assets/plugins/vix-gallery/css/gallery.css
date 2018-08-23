@@ -1,0 +1,230 @@
+.vix-caption {display: none;}
+
+.vix-overlay {
+	position: fixed;
+	z-index: 900;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: none;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 30px 50px;
+}
+
+.vix-modal {
+	position: relative;
+	padding: 30px 0;
+	width: auto;
+	height: 100%;
+	cursor: auto;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.vix-image-wrap {
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vix-image-wrap > img {
+	max-width: 100%;
+	max-height: 100%;
+	display: none;
+}
+
+.vix-loader {
+	position: absolute;
+	left: 50%; top: 50%;
+	margin: -6px 0 0 -21px;
+	width: 43px;
+	height: 11px;
+	background: url('../img/loader.gif') no-repeat center;
+}
+
+.vix-title {
+	position: absolute;
+	left: 20px; top: 10px;
+	font-size: 14px;
+	color: #dfdfdf;
+	z-index: 5;
+}
+
+.vix-btn {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background: transparent;
+	z-index: 2;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.vix-btn-prev {left: 0;}
+.vix-btn-next {right: 0;}
+
+.vix-btn:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	display: block;
+	width: 17px;
+	height: 29px;
+	background: url('../img/vix-btn.png') no-repeat;
+}
+
+.vix-btn-prev:before {left: 20px;}
+.vix-btn-next:before {right: 20px; background-position: right center;}
+
+.vix-btn:hover,
+.vix-close:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.vix-close {
+	position: absolute;
+	right: 15px; top: 15px;
+	z-index: 5;
+	width: 14px;
+	height: 15px;
+	background: url('../img/remove-icon.png') no-repeat;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.vix-overlay {padding: 0;}
+}
+
+
+/* modal-title *
+
+.vix-modal-title {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.vix-title-caption {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 15px;
+}
+
+.vix-close {
+	width: 9px;
+	height: 9px;
+	position: absolute;
+	top: -9px;
+	right: -9px;
+	background: url('../img/remove-icon.png') no-repeat;
+	opacity: 0.3;
+	-webkit-transition: opacity 0.3s ease 0s;
+	-moz-transition: opacity 0.3s ease 0s;
+	-ms-transition: opacity 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s;
+	transition: opacity 0.3s ease 0s;
+	display: block;
+}
+
+.vix-close:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+/* modal-body *
+
+.vix-modal-body {
+	position: relative;
+}
+
+.vix-body-top {
+	position: relative;
+	padding: 0 40px;
+	min-height: 100px;
+}
+
+.vix-btn{
+	cursor: pointer;
+	width: 17px;
+	height: 29px;
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	background: url('../img/vix-btn.png') no-repeat left top;
+}
+
+.vix-btn-prev {left: 0;}
+.vix-btn-next {right: 0; background-position: right top;}
+
+.vix-btn-prev:hover {background-position: left bottom;}
+.vix-btn-next:hover {background-position: right bottom;}
+
+.vix-loader {
+	width: 32px;
+	height: 32px;
+	background: url('../img/loader.gif') no-repeat center center;
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -16px 0 0 -16px;
+}
+
+.vix-image {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.vix-image-caption {
+	font-size: 15px;
+	margin: 30px 0;
+	display: none;
+}
+
+/* modal-body *
+
+.vix-modal-footer {
+	display: none;
+	padding: 20px 30px;
+	border-top: 1px solid #e1e8f2;
+	background: #eef1f5;
+	margin: 0 -30px -30px;
+	border-radius: 0 0 7px 7px;
+}
+
+.vix-modal-footer:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.vix-image-date {
+	float: left;
+	max-width: 50%;
+}
+
+.vix-image-actions {
+	float: right;
+	max-width: 50%;
+}

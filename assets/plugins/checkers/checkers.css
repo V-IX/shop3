@@ -1,0 +1,42 @@
+.checker, .radio {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 5px;
+	position: relative;
+	vertical-align: -2px;
+}
+
+.checker input[type="checkbox"], .radio input[type="radio"] {
+	width: 14px;
+	height: 14px;
+	position: relative;
+	z-index: 2;
+	opacity: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+.checker .checker-view, .radio .radio-view {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 14px;
+	height: 14px;
+	background: url('checkers.png') no-repeat 0 0;
+}
+
+.checker input[type="checkbox"][disabled], .radio input[type="radio"][disabled] {cursor: not-allowed;}
+
+.checker input[type="checkbox"]:checked + .checker-view {background-position: 0 -14px;}
+.checker input[type="checkbox"]:hover + .checker-view {background-position: 0 -28px;}
+.checker input[type="checkbox"]:checked:hover + .checker-view {background-position: 0 -42px;}
+.checker input[type="checkbox"][disabled] + .checker-view {background-position: 0 -56px;}
+.checker input[type="checkbox"][disabled]:checked + .checker-view {background-position: 0 -70px;}
+
+.radio .radio-view {background-position: -14px 0;}
+.radio input[type="radio"]:checked + .radio-view {background-position: -14px -14px;}
+.radio input[type="radio"]:hover + .radio-view {background-position: -14px -28px;}
+.radio input[type="radio"]:checked:hover + .radio-view {background-position: -14px -42px;}
+.radio input[type="radio"][disabled] + .radio-view {background-position: -14px -56px;}
+.radio input[type="radio"][disabled]:checked + .radio-view {background-position: -14px -70px;}

@@ -1,0 +1,508 @@
+@import 'config.scss';
+
+// SMALL PC
+
+@media (max-width: 1200px) {
+
+// home
+.offer {
+	&-slider {height: 330px;}
+	&-slide {
+		height: 330px;
+		line-height: 280px;
+		
+		& .title {@include myfont(24px, null, 30px);}
+		& .descr {@include myfont(18px, null, 24px);}
+		& .btn {height: 40px; line-height: 38px; padding: 0 25px;}
+	}
+}
+
+// catalog
+
+// products
+.products {
+	&-list {
+		& > ul > li {width: 33.33%;}
+		& .floater {
+			&._1 {display: none;}
+			&._2 {display: block;}
+		}
+	}
+}
+
+.product {
+	&-gallery {width: 275px; margin-right: -275px;}
+	&-info {padding-left: 300px;}
+}
+
+// cart
+.cart {
+	&-left {padding-right: 470px; margin-right: -450px;}
+	&-right {width: 450px;}
+	
+	&-list {
+		&-item {
+			
+			& .img {width: 90px; margin-right: -90px;}
+			& .descr {padding-left: 105px;}
+		}
+	}
+}
+
+// contacts
+.contacts {
+	&-left {padding-right: 550px; margin-right: -450px;}
+	&-right {width: 450px;}
+}
+
+
+} /* END SMALL PC
+===========================================================*/
+
+// TABLET
+
+@media (max-width: 992px) {
+
+// template
+.header {
+	
+	&-phones {
+		@include myfont(16px, null, 18px);
+		& i {display: none;}
+	}
+	&-center {
+		& .cols {
+			& > li {margin-right: 30px;}
+		}
+	}
+	&-info {font-size: 11px; max-width: 200px;}
+	&-cart {
+		margin-bottom: 7px;
+		& .label {display: none;}
+		& .fa {font-size: 20px; vertical-align: middle;}
+	}
+	&-btn {
+		background: none;
+		border: 0;
+		padding: 0;
+		height: auto;
+		color: $color-link;
+		text-decoration: underline;
+		text-shadow: none;
+		font-weight: 700;
+		&:hover {background: none;}
+	}
+}
+
+.logo {
+	height: 40px; margin-right: 10px;
+	
+	&-title {font-size: 24px;}
+	&-descr {font-size: 10px;}
+}
+
+.tmenu {
+	& .wrapper {padding: 0;}
+	&-item {
+		& > a {
+			@include myfont(13px, 700, 18px);
+			padding: 12px 16px 10px 15px;
+			border-bottom-width: 2px;}
+	}
+}
+
+.footer {
+	&-left {width: 250px; margin-right: -250px;}
+	&-right {padding-left: 280px;}
+}
+
+// offer
+.offer {
+	& .wrapper {padding: 0;}
+	&-slider {height: 265px;}
+	&-slide {
+		height: 265px;
+		line-height: 225px;
+		
+		& .in {margin: 0 30px;}
+		& .title {@include myfont(20px, null, 24px);}
+		& .descr {@include myfont(14px, null, 18px);}
+		& .btn {height: 35px; line-height: 33px; padding: 0 20px;}
+	}
+	&-btns {
+		& > a {
+			top: -20px;
+			@include mysize(40px, 40px);
+			@include myfont(25px, null, 36px);
+			&.flex {
+				&-prev {left: 10px; padding-right: 4px;}
+				&-next {right: 10px; padding-left: 4px;}
+			}
+		}
+	}
+}
+
+.home {
+	&-catalogs {
+		& .wrapper {padding: 0;}
+		& .list > li {width: 50%;}
+	}
+}
+
+// catalog
+.catalog {
+	&-left {width: 200px; margin-right: -200px;}
+	&-right {padding-left: 220px;}
+}
+
+.cmenu {
+	&-title {font-size: 16px;}
+}
+
+// product
+.products {
+	&-list {
+		& > ul > li {width: 50%;}
+		& .floater {
+			&._2 {display: none;}
+			&._3 {display: block;}
+		}
+	}
+}
+
+.product {
+	&-left {display: none;}
+	&-right {float: none; width: auto; padding: 0;}
+}
+
+// cart
+
+.cart {
+	&-left {float: none; width: auto; margin: 0 0 20px; padding: 0;}
+	&-right {float: none; width: auto; margin: 0; padding: 0;}
+}
+
+// news
+.news {
+	&-list {
+		& > li {width: 50%;}
+		& .floater {
+			&._1 {display: none;}
+			&._2 {display: block;}
+		}
+	}
+}
+
+// contacts
+.contacts {
+	&-left {padding-right: 350px; margin-right: -300px;}
+	&-right {width: 300px;}
+}
+
+} /* END TABLET
+===========================================================*/
+
+// MOBILE
+
+@media (max-width: 768px) {
+
+.super-wrapper {padding-bottom: 175px;}
+// template
+.header {
+	
+	&-center {
+		text-align: center;
+		&-btn {
+			@include inline;
+		}
+		
+		& .cols {
+			display: none;
+			& > li {
+				display: block;
+				margin: 0 0 5px;
+				&:last-child {margin-bottom: 0;}
+			}
+		}
+	}
+	
+	&-phones i {display: inline-block;}
+	
+	& .floater {display: block;}
+}
+
+// tmenu
+.tmenu {
+	
+	&-btn {display: block; @include myfont(13px, 700, 18px, #fff); padding: 12px 16px 10px 15px; text-decoration: none;}
+	&-wrap {display: none; background: #777;}
+	&-list {
+		display: block;
+		& > li {display: block; border-bottom: 1px solid #666;}
+	}
+	&-item {
+		& > a {text-align: left; border: 0; padding: 13px 15px;}
+	}
+	&._open .tmenu-wrap {display: block;}
+}
+
+// footer
+.footer {
+	min-height: 175px;
+	margin-top: -175px;
+	&-top {padding: 25px 0; min-height: 145px;}
+	&-left {float: none; width: auto; margin: 0; text-align: center;}
+	&-right {display: none;}
+	&-email {padding: 0; & .fa {display: none;}}
+}
+
+// page
+.content {padding: 15px 0 30px;}
+.breadcrumbs {display: none;}
+.page {
+	&-top {margin-bottom: 20px;}
+	&-title {@include myfont(22px, null, 26px);}
+	&-brief {@include myfont(12px, null, 20px); margin-top: 5px;}
+	&-social {float: none; font-size: 13px;}
+	&-return {float: none; margin-top: 15px; @include myfont(13px, 700);}
+}
+
+// offer
+.offer {
+	background: #f7f7f7;
+	margin: -15px 0 0;
+	&-slider {height: auto;}
+	&-slide {
+		height: auto;
+		line-height: 1;
+		& .img {position: static;}
+		& .in {display: block; max-width: none; margin: 0; padding: 10px 15px;}
+		& .title {@include myfont(16px, null, 20px);}
+		& .descr {@include myfont(13px, null, 16px); margin-top: 5px;}
+		& .more {margin-top: 5px;}
+		& .btn {background: none; border: 0; padding: 0; margin: 0; height: auto; color: $color-link; text-decoration: underline; text-shadow: none; @include myfont(13px, 700, 1); &:hover {background: none;}}
+	}
+	&-btns {display: none;}
+}
+
+.home {
+	&-title {font-size: 22px;}
+	
+	&-about {
+		& .img {float: none; width: 250px; margin: 0 auto 15px;}
+		& .descr {float: none; width: auto; padding: 0; text-align: center;}
+	}
+}
+
+// catalog
+.catalog {
+	&-left {float: none; width: auto; margin: 0 0 20px;}
+	&-right {float: none; width: auto; padding: 0;}
+	&-mobile {display: block;}
+	&-lbanner {display: none;}
+	&-banner {margin: 30px -15px 0;}
+}
+
+.cmenu {
+	display: none;
+	&._open {display: block;}
+	&-btn {display: block;}
+	&-title {display: none;}
+}
+
+.filter {
+	&-form {display: none; &._open {display: block;}}
+	&-btn {display: block;}
+}
+
+
+// product
+
+.products {
+	&-slider {
+		&-btns {
+			& > a {top: -15px; @include mysize(30px, 30px); @include myfont(20px, null, 26px);
+				&.flex {
+					&-prev {left: -10px; padding-right: 4px;}
+					&-next {right: -10px; padding-left: 4px;}
+				}
+			}
+		}
+	}
+	&-item {
+		padding: 5px 5px 10px;
+		& .title {@include myfont(13px, null, 16px);}
+		& .brief {@include myfont(11px, null, 14px); height: 28px;}
+	}
+	
+	&-list {
+		& > ul {
+			margin: 0 -3px -5px;
+			& > li {padding: 0 3px; margin-bottom: 5px;}
+		}
+	}
+}
+
+.product {
+	&-gallery {float: none; width: auto; max-width: 330px; margin: 0 auto 20px;}
+	&-info {float: none; width: auto; padding: 0;}
+	&-articul {float: none; width: auto; max-width: none;}
+	&-raiting {float: none; width: auto; max-width: none; margin-top: 10px; text-align: left;}
+	&-features {font-size: 12px;}
+	&-tabs {
+		&-list {
+			padding: 0 0 5px;
+			& > li {
+				margin-bottom: 5px;
+				& > a {line-height: 10px; padding: 8px 15px; border: 0; background: #f7f7f7; border: 1px solid #e5e5e5; border-radius: 0;
+					&.active{padding-bottom: 8px; margin-bottom: 0}}
+			}
+		}
+	}
+	&-comments {
+		&-label {float: none;}
+		&-btn {float: none; margin-top: 10px; text-align: left;}
+	}
+}
+
+// cart
+
+.cart {
+	&-panels {
+		&-item {padding: 0 0 20px; border: 0; border-bottom: 1px solid #e5e5e5;
+			& .row {
+				& > div {
+					margin-bottom: 15px;
+					&:last-child {margin-bottom: 0;}
+				}
+			}
+		}
+	}
+	&-list {
+		&-wrap {max-height: 400px;}
+		& > li {padding: 8px 10px;}
+		&-item {
+			& .img {width: 60px; margin-right: -60px;}
+			& .descr {padding-left: 75px;}
+			& .title {font-size: 13px;}
+			& .brief {@include myfont(11px, null, 15px)}
+			& .counter {
+				& .price {display: none;}
+				& .subtotal {@include inline; float: none; width: auto; margin-left: 10px; @include myfont(14px, null, 30px);}
+			}
+		}
+	}
+	&-counter {
+		@include mysize(80px, 30px);
+		&-input {height: 30px; padding: 0 25px; font-size: 13px;}
+		&-btn {height: 30px; @include myfont(16px, null, 28px);}
+	}
+	&-total {
+		&-list {
+			font-size: 13px;
+			& > li._big {font-size: 16px;}
+			& .label {width: 100px; margin-right: -100px;}
+			& .value {padding-left: 115px;}
+		}
+	}
+	&-actions {
+		& .btn {display: block; width: 100%; margin: 0 auto; padding: 0 10px;}
+		& a {display: block; text-align: center; margin-top: 10px;}
+	}
+}
+
+// mfrs
+.mfrs {
+	&-list {
+		& > ul {
+			margin: 0;
+			& > li {
+				float: none; width: auto; padding: 0 0 15px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5;
+			}
+		}
+	}
+	&-pageimg {height: 40px;}
+}
+
+// faq
+.faq {
+	&-item {
+		& .title {@include myfont(16px, null, 22px);}
+		& .text {padding: 10px 15px;}
+	}
+}
+
+// reviews
+.reviews {
+	&-item {
+		& .img {float: none; margin: 0 auto 20px;}
+		& .descr {float: none; padding: 0;}
+		& .title {text-align: center; & span {display: block; margin-top: 2px;}}
+		& .text {text-align: center;}
+	}
+}
+
+// contacts
+.contacts {
+	&-map {margin: 0 -15px 30px; padding: 0; border: 0;}
+	&-left {float: none; width: auto; padding: 0; margin: 0 0 15px;}
+	&-right {float: none; width: auto;}
+}
+
+// popup
+
+.popup {
+	width: 300px;
+	padding: 20px 25px 25px;
+	
+	& .title {@include myfont(18px, null, 22px)}
+	& .descr {@include myfont(13px, null, 18px);}
+	
+	&-cart {
+		padding: 0;
+		&-img {display: none;}
+		&-descr {
+			text-align: center;
+			& .h4, & .mb15 {display: none;}
+		}
+		&-bottom {
+			padding: 15px 20px;
+			
+			& .form {padding: 0;
+				& .btn {position: static; margin-top: 5px;}
+			}
+		}
+	}
+}
+
+// comments
+.comments {
+	&-form {width: auto; max-width: 400px;}
+}
+
+.text-editor {
+	@include myfont(12px, null, 1.7);
+	& h1 {font-size: $f-h1 - 2;}
+	& h2 {font-size: $f-h2 - 2;}
+	& h3 {font-size: $f-h3 - 2;}
+	& h4 {font-size: $f-h4 - 2;}
+	& h5 {font-size: $f-h5 - 2;}
+	& h6 {font-size: $f-h6 - 1;}
+}
+
+.errors {
+	& .num {font-size: 50px;}
+	& .text {margin-top: 10px;}
+}
+
+.cap {
+	background: #fff; padding: 50px 0;
+	&-form {padding: 0; width: auto;}
+	& .info {text-align: center;
+		& .left {float: none; font-size: 16px; margin-bottom: 10px;}
+		& .right {float: none; text-align: inherit;}
+	}
+}
+
+} /* END MOBILE
+===========================================================*/

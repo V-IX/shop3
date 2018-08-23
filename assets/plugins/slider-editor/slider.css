@@ -1,0 +1,106 @@
+/* slide */
+
+.slide-wrap {
+	width: 100%;
+	border: 2px solid #d8d8d8;
+	overflow: auto;
+	font-family: 'Ubuntu', sans-serif;
+	background: url('chess.png');
+}
+
+.slide {
+	width: 660px;
+	height: 350px;
+	background-color: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+}
+
+.slide .wrapper {
+	width: auto;
+	margin: 0 -1px;
+	padding: 0;
+	height: 350px;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+}
+
+.slide .scontent {
+	position: absolute;
+	box-shadow: 0 0 0 1px #d8d8d8;
+	padding: 0 0;
+	line-height: 1;
+}
+
+.slide .scontent > div {margin-bottom: 15px;}
+.slide .scontent > div:last-child {margin-bottom: 0;}
+
+.slide .title {
+	margin-bottom: 10px;
+}
+
+.slide .text {
+	line-height: 1.1;
+}
+
+.slide .sbtn {
+	
+}
+
+.slide .btn {
+	display: inline-block;
+	vertical-align: middle;
+	height: 45px;
+	line-height: 45px;
+	border-radius: 45px;
+	padding: 0 30px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	background: #f11f47;
+	transition: background 0.3s ease 0s;
+	text-transform: uppercase;
+}
+
+.slide .btn:hover {
+	background: #cd1815;
+
+}
+
+/* slide-square */
+
+.slide-squares {
+	font-size: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.slide-square {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #d8d8d8;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 14px;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+}
+
+#color.slide-square {transition: border-color 0.3s ease 0s;}
+
+.slide-square._active {
+	background: #e9e9e9;
+	border-color: #bbb;
+}
+
+.slide-square:hover {
+	border-color: #999;
+}

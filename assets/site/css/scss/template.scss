@@ -1,0 +1,515 @@
+@import 'config.scss';
+
+.super-wrapper {
+	min-height: 100%;
+	padding-bottom: $footer-height;
+}
+
+/* header 
+--------------------------------------------------------*/
+
+.header {
+	padding: 15px 0 20px;
+	text-align: center;
+	
+	&-left {
+		float: left;
+		text-align: left;
+	}
+	&-center {
+		@include inline;
+		text-align: left;
+		padding-top: 5px;
+		
+		& .cols {
+			& > li {
+				@include inline;
+				margin-right: 70px;
+				&:last-child {margin-right: 0;}
+			}
+		}
+		&-btn {
+			position: relative;
+			display: none;
+			@include myfont(13px, 700, null, $color-blue);
+			
+			&:after {
+				content: "";
+				@include position(absolute, 100%, 5px);
+				margin-left:5px;
+				display: block;
+				border: 4px solid transparent;
+				border-top-color: $color-blue;
+			}
+		}
+	}
+	&-right {
+		float: right;
+		text-align: right;
+	}
+	
+	&-phones {
+		@include myfont(18px, null, 20px);
+		
+		& > li {
+			margin-bottom: 5px;
+			&:last-child {margin-bottom: 0;}
+		}
+		
+		& i {
+			@include inline;
+			@include mysize(16px, 14px);
+			margin-right: 5px;
+			
+			&._mts {background: url('../img/icons/mts.png') no-repeat center;}
+			&._vel {background: url('../img/icons/vel.png') no-repeat center;}
+		}
+	}
+	
+	&-info {
+		@include myfont(13px, null, 19px);
+		max-width: 250px;
+		
+		& > li {
+			position: relative;
+			padding-left: 25px;
+			margin-bottom: 5px;
+			
+			&:last-child {margin-bottom: 0;}
+			
+			& .fa {
+				@include position(absolute, 0, 3px);
+				@include myfont(14px, null, null, $color-link);
+			}
+		}
+	}
+	
+	&-adres {}
+	
+	&-email {
+		@include ellipsis;
+		color: $color-gray-lite;
+		text-decoration: underline;
+	}
+	
+	&-cart {
+		display: block;
+		@include myfont(15px, null, 20px, inherit);
+		text-decoration: none;
+		margin-bottom: 10px;
+		
+		& .fa {
+			margin-right: 5px;
+			@include myfont(16px, null, null, $color-gray-lite);
+		}
+			
+		& .label {
+			text-decoration: underline;
+		}
+		
+		& .count {
+			@include inline;
+			height: 20px;
+			min-width: 20px;
+			padding: 0 4px;
+			@include myfont(12px, 700, 20px, #fff);
+			background: $color-link;
+			text-align: center;
+			border-radius: 20px;
+			margin-left: 3px;
+		}
+		
+		&:hover {
+			& .label {text-decoration: none;}
+		}
+		
+		&._empty {
+			
+			& .count {display: none;}
+		}
+	}
+	
+	&-btn {
+		height: 25px;
+		padding: 0 10px;
+		@include myfont(12px, null, 23px);
+	}
+	
+	& .floater {display: none;}
+}
+
+.logo {
+	@include inline;
+	height: 50px;
+	margin-right: 15px;
+	
+	&-wrap {
+		@include inline;
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	&-text {
+		@include inline;
+	}
+	
+	&-title {
+		@include myfont(28px, 700, 1);
+		margin-bottom: 5px;
+	}
+	&-descr {
+		@include myfont(12px, null, 1, $color-gray-lite);
+	}
+	
+}
+
+/* tmenu 
+--------------------------------------------------------*/
+
+.tmenu {
+	background: $color;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	
+	&-wrap {
+		display: table;
+		width: 100%;
+	}
+	&-list {
+		display: table-row;
+		
+		& > li {
+			display: table-cell;
+			
+			&:last-child {
+				& .tmenu-item > a:after {display: none;}
+			}
+		}
+	}
+	
+	&-item {
+		position: relative;
+		
+		&:hover {
+			
+			& > a {
+				border-color: #fff;
+				background: rgba(255, 255, 255, 0.2);
+			}
+		}
+		
+		& > a {
+			display: block;
+			@include myfont(16px, 700, 20px, #fff);
+			padding: 18px 31px 15px 30px;
+			white-space: nowrap;
+			text-align: center;
+			border-bottom: 3px solid transparent;
+			text-decoration: none;
+			transition: all 0.3s ease 0s;
+			
+			&:after {
+				content: "";
+				display: block;
+				@include position(absolute, null, 50%, 0);
+				height: 30px;
+				margin-top: -15px;
+				border-right: 1px solid rgba(255, 255, 255, 0.2);
+			}
+			
+			&.current {
+				background: $color-link;
+				border-color: $color-link-hover;
+			}
+		}
+			
+		& .toggle {display: none;}
+	}
+	
+	&-child {display: none;}
+	
+	
+	&-btn {display: none;}
+}
+
+/* footer 
+--------------------------------------------------------*/
+
+.footer {
+	min-height: $footer-height;
+	margin-top: -$footer-height;
+	
+	&-top {
+		padding: 30px 0 35px;
+		@include myfont(12px, null, null, $color-gray);
+		background: url('../img/block-shadow.png') no-repeat center top #f7f7f7;
+		min-height: ($footer-height - 30);
+	}
+	
+	&-bottom {
+		padding: 9px 0 5px;
+		height: 30px;
+		@include myfont(12px, null, 15px);
+		text-align: center;
+		background: rgba(0, 0, 0, 0.1);
+		
+		& a {
+			@include myfont(null, 700, null, inherit);
+		}
+	}
+	
+	&-left {
+		position: relative;
+		z-index: 5;
+		float: left;
+		width: 300px;
+		margin-right: -300px;
+	}
+	&-right {
+		float: right;
+		width: 100%;
+		padding-left: 350px;
+	}
+	
+	&-menu {
+		& .list {
+			margin: 0 -10px;
+			& > li {
+				float: left;
+				width: 33.33%;
+				padding: 0 10px;
+			}
+		}
+		
+		& .title {
+			@include myfont(14px, 700, null, $color);
+			margin-bottom: 10px;
+		}
+		
+		& .child {
+			
+			& > li {
+				margin-bottom: 8px;
+				&:last-child {margin-bottom: 0;}
+			}
+			
+			& a {
+				color: $color-gray-lite;
+			}
+		}
+	}
+	
+	&-email {
+		position: relative;
+		margin-top: 10px;
+		padding-left: 25px;
+		
+		& .fa {
+			@include position(absolute, 0, 2px);
+		}
+	}
+	
+	& .copyright {
+		margin-bottom: 15px;
+	}
+}
+
+/* breadcrumbs
+--------------------------------------------------------*/
+
+.breadcrumbs {
+	font-size: 12px;
+	color: $color-link;
+	margin-bottom: 15px;
+	&-in {
+		@include ellipsis;
+	}
+	&-sep {
+		margin: 0 5px;
+		color: $color-gray-lite;
+	}
+	& a {
+		color: $color-gray-lite;
+	}
+}
+
+/* pagination
+--------------------------------------------------------*/
+
+.pagination {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 0;
+	
+	& li {
+		@include inline;
+		@include myfont(15px, 700);
+	}
+	
+	& a {
+		display: block;
+		text-decoration: none;
+		transition: color 0.3s ease 0s;
+	}
+	
+	&-num a {
+		height: 27px;
+		color: $color-link;
+		line-height: 27px;
+		min-width: 27px;
+		padding: 0 3px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background: #f2f2f2;
+		}
+	}
+	
+	&-active a {
+		color: #fff;
+		background: $color-link;
+		&:hover {
+			color: #fff;
+			background: $color-link;
+		}
+	}
+	
+	&-nav a {
+		@include myfont(13px, 600);
+		color: $color-gray;
+		& .fa {
+			vertical-align: 0;
+		}
+		& span {
+			text-decoration: underline;
+		}
+		&:hover {
+			& span {text-decoration: none;}
+		}
+	}
+	
+	&-left {
+		margin-right: 15px;
+		& .fa {margin-right: 5px;}
+	}
+	&-right {
+		margin-left: 15px;
+		& .fa {margin-left: 5px;}
+	}
+	
+}
+
+/* social
+--------------------------------------------------------*/
+
+.social {
+	
+	&-label {
+		@include inline;
+		font-weight: 400;
+		color: $color-gray;
+		margin-right: 5px;
+	}
+	&-init {
+		@include inline;
+		font-size: 0;
+		& > a {
+			@include inline;
+			margin-right: 5px;
+			@include mysize(24px, 24px);
+			@include myfont(13px, null, 24px, #fff);
+			border-radius: 5px;
+			transition: all 0.3s ease 0s;
+			text-align: center;
+			
+			&:last-child {margin-right: 0;}
+			
+			&._vk {
+				background: #4749a5;
+				&:hover {background: #3d3e89;}
+			}
+			&._facebook {
+				background: #6464d8;
+				&:hover {background: #5353b3;}
+			}
+			&._twitter {
+				background: #4db9e4;
+				&:hover {background: #3d9dc3;}
+			}
+			&._at {
+				background: #e8b13b;
+				&:hover {background: #e19f11;}
+			}
+			&._google-plus {
+				background: #e33d3d;
+				&:hover {background: #c93636;}
+			}
+			&._odnoklassniki {
+				background: #e8993b;
+				&:hover {background: #ce8b3c;}
+			}
+		}
+	}
+}
+
+/* content 
+--------------------------------------------------------*/
+
+.content {
+	padding: 20px 0 50px;
+}
+
+.page {
+	
+	&-top {
+		margin-bottom: 30px;
+	}
+	&-title {
+		position: relative;
+		@include myfont(24px, 700, 28px);
+		border-bottom: 1px solid #b9b9b9;
+		
+		& ._in {
+			@include inline;
+			position: relative;
+			padding: 0 10px 10px 0;
+			margin-bottom: -1px;
+			
+			&:after {
+				content: "";
+				display: block;
+				@include position(absolute, 0, null, null, 0);
+				width: 100%;
+				max-width: 400px;
+				border-bottom: 5px solid $color-link;
+			}
+		}
+	}
+	
+	&-brief {
+		@include myfont(13px, null, 22px, $color-gray);
+		margin-top: 10px;
+	}
+	
+	&-text {
+		margin-top: 40px;
+		
+		& .text-editor {
+			@include myfont(13px, null, null, $color-gray);
+			
+			& h1, & h2, & h3, & h4, & h5, & h6 {color: $color;}
+		}
+	}
+	
+	&-bottom {
+		margin-top: 20px;
+	}
+	
+	&-social {
+		float: right;
+	}
+	&-return {
+		float: left;
+		margin-top: 5px;
+		
+		& a {color: $color-blue;}
+	}
+}

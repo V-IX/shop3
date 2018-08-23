@@ -1,0 +1,101 @@
+// 
+$imp: !important;
+
+// STYLES
+
+
+
+// font
+$f-family: 'Arial', sans-serif;
+$f-size: 14px;
+$f-h1: 30px;
+$f-h2: 24px;
+$f-h3: 20px;
+$f-h4: 16px;
+$f-h5: 14px;
+$f-h6: 12px;
+$f-small: 0.8em;
+$f-big: 1.2em;
+
+$color: #474747;
+$color-link: #ff9601;
+$color-link-hover: #f08d00;
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #6f6f6f;
+$color-gray-lite: #959595;
+
+$color-blue: #007ef2;
+$color-green: #19a917;
+
+$color-error: #de1212;
+
+// FORM STUFF
+
+$form-margin: 15px;
+$form-submargin: 7px;
+
+$form-height: 35px;
+$form-height-xl: 42px;
+$form-height-xxl: 50px;
+$form-height-xs: 30px;
+$form-height-xxs: 26px;
+
+$form-inputborder: #cdcdcd;
+
+// TEMPLATE
+
+$wrapper-padding: 15px;
+$footer-height: 210px;
+
+$row-margin: 30px;
+
+// MIXINS
+
+@mixin mysize($width: null, $height: null) {
+	@if $width != null {width: $width;}
+	@if $height != null {height: $height;}
+}
+
+@mixin inline($display: inline-block, $valign: middle) {
+	display: $display;
+	vertical-align: $valign;
+}
+
+@mixin position($position: absolute, $left: null, $top: null, $right: null, $bottom: null, $index: null) {
+	position: $position;
+	@if $index != null {z-index: $index;}
+	@if $top != null {top: $top;}
+	@if $bottom != null {bottom: $bottom;}
+	@if $left != null {left: $left;}
+	@if $right != null {right: $right;}
+}
+
+@mixin myfont($fs: null, $fw: null, $lh: null, $c: null, $ff: null) {
+	@if $ff != null {font-family: $ff;}
+	@if $fs != null {font-size: $fs;}
+	@if $fw != null {font-weight: $fw;}
+	@if $lh != null {line-height: $lh;}
+	@if $c != null {color: $c;}
+}
+
+@mixin scale($scale) {
+	-webkit-transform: scale($scale);
+	-moz-transform: scale($scale);
+	-ms-transform: scale($scale);
+	-o-transform: scale($scale);
+	transform: scale($scale);
+}
+
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin gradient($from, $to) {
+	background-image: -webkit-linear-gradient($from 0%, $to 100%);
+	background-image: -moz-linear-gradient($from 0%, $to 100%);
+	background-image: -o-linear-gradient($from 0%, $to 100%);
+	background-image: linear-gradient($from 0%, $to 100%);
+}

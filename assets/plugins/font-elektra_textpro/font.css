@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Elektra Text Pro';
+    src: url('elektratextlight-webfont.eot');
+    src: url('elektratextlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('elektratextlight-webfont.woff2') format('woff2'),
+         url('elektratextlight-webfont.woff') format('woff'),
+         url('elektratextlight-webfont.ttf') format('truetype'),
+         url('elektratextlight-webfont.svg#elektra_light_proregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Elektra Text Pro';
+    src: url('elektratext-webfont.eot');
+    src: url('elektratext-webfont.eot?#iefix') format('embedded-opentype'),
+         url('elektratext-webfont.woff2') format('woff2'),
+         url('elektratext-webfont.woff') format('woff'),
+         url('elektratext-webfont.ttf') format('truetype'),
+         url('elektratext-webfont.svg#elektra_text_proregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Elektra Text Pro';
+    src: url('elektratextitalic-webfont.eot');
+    src: url('elektratextitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('elektratextitalic-webfont.woff2') format('woff2'),
+         url('elektratextitalic-webfont.woff') format('woff'),
+         url('elektratextitalic-webfont.ttf') format('truetype'),
+         url('elektratextitalic-webfont.svg#elektra_text_proitalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Elektra Text Pro';
+    src: url('elektratextmedium-webfont.eot');
+    src: url('elektratextmedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('elektratextmedium-webfont.woff2') format('woff2'),
+         url('elektratextmedium-webfont.woff') format('woff'),
+         url('elektratextmedium-webfont.ttf') format('truetype'),
+         url('elektratextmedium-webfont.svg#elektra_text_proitalic') format('svg');
+    font-weight: 500;
+    font-style: medium;
+
+}
+
+@font-face {
+    font-family: 'Elektra Text Pro';
+    src: url('elektratextbold-webfont.eot');
+    src: url('elektratextbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('elektratextbold-webfont.woff2') format('woff2'),
+         url('elektratextbold-webfont.woff') format('woff'),
+         url('elektratextbold-webfont.ttf') format('truetype'),
+         url('elektratextbold-webfont.svg#elektra_text_probold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Elektra Text Pro';
+    src: url('elektratextbolditalic-webfont.eot');
+    src: url('elektratextbolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('elektratextbolditalic-webfont.woff2') format('woff2'),
+         url('elektratextbolditalic-webfont.woff') format('woff'),
+         url('elektratextbolditalic-webfont.ttf') format('truetype'),
+         url('elektratextbolditalic-webfont.svg#elektra_text_probold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+
+}
