@@ -287,7 +287,7 @@ class CI_Pagination {
 						}
 						else
 						{
-							$n = $this->prefix.$n.$this->suffix;//($n == '') ? '' : $this->prefix.$n.$this->suffix;
+							$n = ($n == '') ? '' : $this->prefix.$n.$this->suffix;
 
 							$output .= $this->num_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$n.'">'.$loop.'</a>'.$this->num_tag_close;
 						}

@@ -101,9 +101,10 @@ if ( ! function_exists('site_pagination'))
 			'next_link'		=> '<span>Следующая</span> ' . fa('angle-right'),
 		);
 		
-		$offset = trim(uri($uri_segment), 'page-');
+		$uri = uri($uri_segment);
+		$uri_segment = !is_null($uri) ? trim($uri, 'page-') : 0;
 		
-		$return['offset'] = ($offset * $return['per_page']) - $return['per_page'];
+		$return['offset'] = ($uri_segment * $return['per_page']) - $return['per_page'];
 		if($return['offset'] < 0) $return['offset'] = 0;
 		
 		if (count($_GET) > 0) $return['suffix'] = '?' . http_build_query($_GET, '', "&");

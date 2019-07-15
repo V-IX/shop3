@@ -96,11 +96,11 @@ class Catalog extends SITE_Controller {
 
 		$this->data['navs'] = $tree['tree'];
 		
-		$count = $this->products_model->getCountByCatalog($item['idItem'], 12);
+		$count = $this->products_model->getCountByCatalog($item['idItem']);
 		$pagination = site_pagination(
 				uri(1).'/'.$this->data['paths'][$item['idItem']],
 				$count,
-				1,//$this->data['siteinfo']['count_front'],
+				$this->data['siteinfo']['count_front'],
 				$this->seg_cnt + 1
 		);
 		$this->data['products'] = $this->products_model->getItemsByCatalog($item['idItem'], $pagination['per_page'], $pagination['offset'], 'shop_products.num|DESC//shop_products.title|ASC');
